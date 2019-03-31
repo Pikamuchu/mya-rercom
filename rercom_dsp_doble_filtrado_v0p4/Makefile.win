@@ -1,0 +1,38 @@
+# Project: Rercom
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o senal.o funciones.o wiener.o $(RES)
+LINKOBJ  = main.o senal.o funciones.o wiener.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/include/c++/3.3.1"  -I"C:/Dev-Cpp/include/c++/3.3.1/mingw32"  -I"C:/Dev-Cpp/include/c++/3.3.1/backward"  -I"C:/Dev-Cpp/lib/gcc-lib/mingw32/3.3.1/include"  -I"C:/Dev-Cpp/include" 
+BIN  = Rercom.exe
+CXXFLAGS = $(CXXINCS)   -O3 -g3
+CFLAGS = $(INCS)   -O3 -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Rercom.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Rercom.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+senal.o: senal.c
+	$(CC) -c senal.c -o senal.o $(CFLAGS)
+
+funciones.o: funciones.c
+	$(CC) -c funciones.c -o funciones.o $(CFLAGS)
+
+wiener.o: wiener.c
+	$(CC) -c wiener.c -o wiener.o $(CFLAGS)
