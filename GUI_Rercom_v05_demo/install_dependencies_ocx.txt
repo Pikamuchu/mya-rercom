@@ -1,0 +1,17 @@
+
+1. Copia los archivos COMDLG32.OCX y MSCOMCTL.OCX en la siguiente carpeta según el sistema operativo que tengas:
+
+    1.1. Si tu sistema es de 32bits entonces pegar el archivo en la siguiente ruta:
+           C:\Windows\System32
+    1.2. Si tu sistema es de 64 bits o Windows 8 entonces pegar el archivo en la siguiente ruta:
+           C:\Windows\SysWOW64
+
+2. Dirigete a inicio, luego en el campo de busqueda de texto escribe CMD y sobre los resultados, realiza botón derecho sobre el CMD y selecciona "ejecutar como administrador"
+
+3. Una vez abierto Símbolo del Sistema tecleas en el lo siguiente:
+    3.1. Si tu sistema es de 32 bits tecleas:
+           regsvr32 C:\Windows\system32\MSCOMCTL.OCX
+		   regsvr32 C:\Windows\system32\COMDLG32.OCX
+    3.2. Si tu sistema es de 64 bits tecleas:
+           regsvr32 C:\Windows\SysWOW64\MSCOMCTL.OCX
+		   regsvr32 C:\Windows\SysWOW64\COMDLG32.OCX
